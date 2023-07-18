@@ -36,3 +36,12 @@ describe("Fizzbuzz Tests", () => {
     expect(result).toEqual("FizzBuzz");
   });
 });
+describe("Fizzbuzz Array", () => {
+  it("recieve an number and create an array", () => {
+    let number = 12;
+
+    const result = fizzbuzzArrayFn(number);
+
+    expect(result).toHaveLength(12);
+  });
+});
