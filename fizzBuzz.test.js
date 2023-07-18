@@ -10,6 +10,16 @@ const prod_code = (number) => {
   }
 };
 
+const fizzbuzzArrayFn = (number) => {
+  const result = [];
+
+  for (let i = 1; i <= number; i++) {
+    const outcome = prod_code(i);
+    result.push(outcome);
+  }
+  console.log(result);
+  return result;
+};
 describe("Fizzbuzz Tests", () => {
   it("Returns Fizz if the number is divisible by 3", () => {
     // Arrange
@@ -38,10 +48,34 @@ describe("Fizzbuzz Tests", () => {
 });
 describe("Fizzbuzz Array", () => {
   it("recieve an number and create an array", () => {
-    let number = 12;
+    const number = 12;
 
     const result = fizzbuzzArrayFn(number);
 
-    expect(result).toHaveLength(12);
+    expect(result).toHaveLength(number);
+  });
+  it("recieve number 15 and return specified array", () => {
+    const number = 15;
+    const theSpecifiedArray = [
+      "1",
+      "2",
+      "Fizz",
+      "4",
+      "Buzz",
+      "Fizz",
+      "7",
+      "8",
+      "Fizz",
+      "Buzz",
+      "11",
+      "Fizz",
+      "13",
+      "14",
+      "FizzBuzz",
+    ];
+
+    const result = fizzbuzzArrayFn(number);
+
+    expect(result).toEqual(theSpecifiedArray);
   });
 });
